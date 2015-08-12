@@ -1,0 +1,13 @@
+{% extends "attendance_book/layout.html" %}
+
+{% block content %}
+    <ul>
+        {% for student in student_list %}
+            <li>
+                <a href="{% url "attendance_book.views.profile" student.pk %}">
+                    {{ student.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock%}
